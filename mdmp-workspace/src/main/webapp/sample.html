@@ -4,21 +4,16 @@
 <title>Bootstrap 101 Template</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap -->
-<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-<link href="css/select2.css" rel="stylesheet" media="screen">
-<link href="css/rainbow.css" rel="stylesheet" media="screen">
-<link href="css/demo.css" rel="stylesheet" media="screen">
+<link href="css/bootstrap.css" rel="stylesheet" media="screen">
 
 <script src="js/lib/jquery-1.8.3.js"></script>
 <script src="js/lib/bootstrap.min.js"></script>
 <script src="js/lib/angular.js"></script>
 <script src="js/sample.js"></script>
-<script src="js/lib/assets/ui-select2.js"></script>
-<script src="js/lib/assets/ui-bootstrap-0.2.0.min.js"></script>
-<script src="js/lib/assets/ui-bootstrap-tpls-0.2.0.min.js"></script>
+<script src="js/lib/ui-bootstrap-tpls-0.2.0.js"></script>
 
 </head>
-<body ng-controller="sample">
+<body class="ng-cloak" ng-controller="sample">
 	<div>{{username}}</div>
 	<div>'status' : {{status}}</div>
 	<!-- <input ng-init="message='test'" ng-model="message">  -->
@@ -29,53 +24,18 @@
 			{{project.name}} , language: {{project.lang}}</li>
 	</ul>
 	<div>How many Projects : {{data.lenth}}</div>
-	<div class="dropdown pull-left">
-		<a class="brand dropdown-toggle" role="button" data-toggle="dropdown"
-			href="#"> UI Bootstrap <b class="caret"></b>
-		</a>
-		<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-			<li><a href="https://github.com/angular-ui/"><strong>Related
-						Projects:</strong></a></li>
-			<li class="divider"></li>
-			<li><a href="http://angular-ui.github.com/">AngularUI</a></li>
-			<li><a href="http://angular-ui.github.com/ng-grid/">Grid</a></li>
-			<li><a href="https://github.com/angular-ui/AngularJs.tmbundle">AngularJS.tmbundle</a></li>
-			<li><a href="http://angular-ui.github.com/router/">Router <span
-					class="label label-success">New!</span></a></li>
-			<li><a href="http://angular-ui.github.com/Tips-n-Tricks/">Tips-n-Tricks
-					<span class="label">WIP</span>
-			</a></li>
-		</ul>
+
+	<div ng-controller="TabsDemoCtrl">
+		<tabs> <pane heading="Static title">Static content</pane> <pane
+			ng-repeat="pane in panes" heading="{{pane.title}}"
+			active="pane.active">{{pane.content}}</pane> </tabs>
+		<div class="row-fluid">
+			<button class="btn" ng-click="panes[0].active = true">Select
+				second tab</button>
+			<button class="btn" ng-click="panes[1].active = true">Select
+				third tab</button>
+			<button class="btn" ng-click="addPane()">Add Pane into Tab</button>
+		</div>
 	</div>
-	<select style="width: 100%;" ui-select2 multiple
-		ui-options="{multiple: true}" ng-model="selectedModules">
-
-		<option value="accordion">Accordion</option>
-
-		<option value="alert">Alert</option>
-
-		<option value="buttons">Buttons</option>
-
-		<option value="carousel">Carousel</option>
-
-		<option value="collapse">Collapse</option>
-
-		<option value="dialog">Dialog</option>
-
-		<option value="dropdownToggle">Dropdown Toggle</option>
-
-		<option value="modal">Modal</option>
-
-		<option value="pagination">Pagination</option>
-
-		<option value="popover">Popover</option>
-
-		<option value="tabs">Tabs</option>
-
-		<option value="tooltip">Tooltip</option>
-
-		<option value="typeahead">Typeahead</option>
-
-	</select>
 </body>
 </html>
