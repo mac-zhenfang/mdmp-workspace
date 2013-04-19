@@ -111,9 +111,8 @@ body {
 				<div class="well sidebar-nav">
 					<ul class="nav nav-list" ng-repeat="group in groups">
 						<!-- This is group ! FIXME  -->
-						<li class="nav-header" ng-click='addPane(group.name)'>{{group.name}}</li>
-						<li ng-click='addPane(group.name)'
-							ng-repeat="report in groups[$index].reports"><a href="#">{{report.name}}</a></li>
+						<li class="nav-header" ><a href="#" ng-click='addPane($index)'>{{group.name}} </a></li>
+						<li ng-repeat="report in groups[$index].reports">{{report.name}}</li>
 					</ul>
 				</div>
 				<!-- sidebar-nav -->
