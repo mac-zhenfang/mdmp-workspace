@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<!-- changes from the defaults -->
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="cacheEnabled" value="false" />
+	</settings>
+	<mappers>
+		<mapper resource="mybatis.mapping/app.map.xml" />
+		<mapper resource="mybatis.mapping/dashboard.map.xml" />
+		<mapper resource="mybatis.mapping/datasource.map.xml" />
+		<mapper resource="mybatis.mapping/member.map.xml" />
+		<mapper resource="mybatis.mapping/model.map.xml" />
+		<mapper resource="mybatis.mapping/org.map.xml" />
+		<mapper resource="mybatis.mapping/report.map.xml" />
+	</mappers>
+</configuration>
