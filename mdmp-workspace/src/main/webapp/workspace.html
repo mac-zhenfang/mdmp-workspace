@@ -39,6 +39,7 @@ body {
 <script src="js/lib/angular-strap.min.js"></script>
 <script src="js/lib/ui-bootstrap-tpls-0.2.0.js"></script>
 <script src="js/workspace.js"></script>
+<script src="js/services.js"></script>
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -111,14 +112,15 @@ body {
 				<div class="well sidebar-nav">
 					<ul class="nav nav-list" ng-repeat="group in groups">
 						<!-- This is group ! FIXME  -->
-						<li class="nav-header" ><a href="#" ng-click='addPane($index)'>{{group.name}} </a></li>
+						<li class="nav-header"><a href="#"
+							ng-click='addPane($index)'>{{group.name}} </a></li>
 						<li ng-repeat="report in groups[$index].reports">{{report.name}}</li>
 					</ul>
 				</div>
 				<!-- sidebar-nav -->
 			</div>
 			<!-- side bar end -->
-			<!--/span-->
+			<!--Report Dashboard start-->
 			<div class="span9">
 				<tabs> <pane heading="{{pane.title}}"
 					ng-repeat="pane in panes">
@@ -146,7 +148,7 @@ body {
 					</div>
 				</div>
 				<!--/row--> <!--/row--> </pane> </tabs>
-				<!-- End pane, tabs -->
+				<!-- End <!--Report Dashboard start-->
 			</div>
 			<!--/span-->
 		</div>

@@ -11,7 +11,8 @@
 <script src="js/lib/angular.js"></script>
 <script src="js/sample.js"></script>
 <script src="js/lib/ui-bootstrap-tpls-0.2.0.js"></script>
-
+<script src="js/lib/highcharts.js"></script>
+<script src="js/lib/exporting.js"></script>
 </head>
 <body class="ng-cloak" ng-controller="sample">
 	<div>{{username}}</div>
@@ -37,5 +38,7 @@
 			<button class="btn" ng-click="addPane()">Add Pane into Tab</button>
 		</div>
 	</div>
+	<div id="container" ng-controller="report" ng-init="initReport()"></div>
+
 </body>
 </html>
