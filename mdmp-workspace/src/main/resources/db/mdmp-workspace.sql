@@ -129,3 +129,19 @@ CREATE TABLE `dashboard` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Init Default Org
+-- ----------------------------
+INSERT INTO `org` VALUES ('o180fe12-93cc-417e-8b99-b1b9710838e5', 'Mac_Johnny_App_Company', 'test', '2013-04-22 14:51:01', '2013-04-22 14:51:01');
+
+-- ----------------------------
+-- Init Default member
+-- ----------------------------
+INSERT INTO `member` VALUES ('u180fe12-93cc-417e-8b99-b1b9710838e5', 'mac.zhenfang@gmail.com', 'o180fe12-93cc-417e-8b99-b1b9710838e5', 'admin', '2013-04-22 14:51:01', '2013-04-22 14:51:01');
+
+-- ----------------------------
+-- Init Default Model
+-- ----------------------------
+
+INSERT INTO `model` VALUES ('m180fe12-93cc-417e-8b99-b1b9710838e5', 'sum', 'u180fe12-93cc-417e-8b99-b1b9710838e5', ' ','{input:["$input$"],op:"incr",val:"1",where:"",groupby:["$groupbykey$]",output:["$output$"]}', '2013-02-28 14:51:01', '2013-04-22 14:51:01');
