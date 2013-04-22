@@ -123,11 +123,13 @@ DROP TABLE IF EXISTS `dashboard`;
 CREATE TABLE `dashboard` (
   `id` varchar(36) NOT NULL,
   `name` varchar(255) NOT NULL,
+  `uid` varchar(36) NOT NULL,
   `description` varchar(1024) DEFAULT NULL,
+  `reports` varchar(1024) DEFAULT NULL,
   `createdTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `lastModifiedTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
+  UNIQUE KEY `name` (`name`,`uid`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------

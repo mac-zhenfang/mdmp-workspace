@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DataSource">
+	<insert id="create" parameterType="com.mdmp.datasource.DataSource">
+		insert datasource (id, name, aid, description, createdTime)
+		values (#{id}, #{name}, #{aid}, #{description}, now())
+	</insert>
+	<select id="get" parameterType="String" resultType="com.mdmp.datasource.DataSource">
+		select datasource.id as id, datasource.name as name, app.name as appName, datasource.description as description from datasource, app where app.id=datasource.aid and id = #{id}
+	</select>
+	<select id="listDataSourceByApp" parameterType="String" resultType="com.mdmp.datasource.DataSource">
+		select datasource.id as id, datasource.name as name, app.name as appName, datasource.description as description from datasource, app where app.id=datasource.aid and datasource.aid = #{aid}
+	</select>
+	<update id="updateDataSourceName" parameterType="com.mdmp.datasource.DataSource">
+		update datasource set name=#{name} where id = #{id}
+	</update>
+	<delete id="remove" parameterType="com.mdmp.datasource.DataSource">
+		delete from datasource where id = #{id}
+	</delete>
+</mapper> 

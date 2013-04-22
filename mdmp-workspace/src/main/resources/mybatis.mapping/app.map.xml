@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="App">
+	<insert id="create" parameterType="com.mdmp.app.App">
+		insert app (id, name, uid, oid, description, createdTime)
+		values (#{id},#{name},#{uid},#{oid},#{description},now())
+	</insert>
+	<select id="get" parameterType="String" resultType="com.mdmp.app.App">
+		select id, name, uid, oid, description from member where id = #{id}
+	</select>
+	<select id="listAppByOrg" parameterType="String" resultType="com.mdmp.app.App">
+		select app.id, app.name, app.uid, app.oid, app.description, org.name from app, org where app.oid=org.id and org.id = #{oid}
+	</select>
+	<update id="updateName" parameterType="com.mdmp.app.App">
+		update org set name = #{name} where id = #{id}
+	</update>
+	<update id="updateDesc" parameterType="com.mdmp.app.App">
+		update org set description = #{description} where id = #{id}
+	</update>
+	<delete id="remove" parameterType="com.mdmp.app.App" >
+		delete from app where id = #{id}
+	</delete>
+</mapper>

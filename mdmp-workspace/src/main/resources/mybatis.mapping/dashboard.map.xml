@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Dashboard">
+	<insert id="create" parameterType="com.mdmp.dashboard.Dashboard">
+		insert dashboard (id, name, uid, description, reports, createdTime)
+		values (#{id}, #{name}, #{uid}, #{description}, #{reports}, now())
+	</insert>
+	<select id="get" parameterType="String" resultType="com.mdmp.dashboard.Dashboard">
+		select dashboard.id as id, dashboard.name as name, member.name as memberName, dashboard.description as description, dashboard.reports as report from dashboard, member where member.id=dashboard.uid and id = #{id}
+	</select>
+	<select id="listDashboardByMember" parameterType="String" resultType="com.mdmp.datasource.DataSource">
+		select dashboard.id as id, dashboard.name as name, member.name as memberName, dashboard.description, dashboard.reports as reports  from dashboard, member where member.id=dashboard.uid and datasource.uid = #{uid}
+	</select>
+	<update id="updateDashboardReports" parameterType="com.mdmp.dashboard.Dashboard">
+		update dashboard set reports=#{reports} where id = #{id}
+	</update>
+	<delete id="remove" parameterType="com.mdmp.dashboard.Dashboard">
+		delete from dashboard where id = #{id}
+	</delete>
+</mapper> 
