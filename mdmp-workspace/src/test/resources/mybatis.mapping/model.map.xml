@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="Model">
+	<insert id="create" parameterType="com.mdmp.model.Model">
+		insert model (id, name, uid, description, logic, createdTime)
+		values (#{id},#{name},#{uid},#{description},#{logic},now())
+	</insert>
+	<select id="get" parameterType="String" resultType="com.mdmp.model.Model">
+		select id, name, uid, description, logic from model where id = #{id}
+	</select>
+	<select id="listModelByUser" parameterType="String" resultType="com.mdmp.model.Model">
+		select model.id as id, model.name as modelName, model.uid as uid, model.description as ModelDesc, model.logic as logic, member.name as memberName from model, member where model.uid = member.id and member.id=#{id}
+	</select>
+	<update id="updateName" parameterType="com.mdmp.model.Model">
+		update model set name = #{name} where id = #{id}
+	</update>
+	<update id="updateDesc" parameterType="com.mdmp.model.Model">
+		update model set description=#{description} where id = #{id}
+	</update>
+	<update id="updateLogic" parameterType="com.mdmp.model.Model">
+		update model set logic=#{logic} where id = #{id}
+	</update>
+	<delete id="remove" parameterType="com.mdmp.model.Model" >
+		delete from model where id = #{id}
+	</delete>
+</mapper>

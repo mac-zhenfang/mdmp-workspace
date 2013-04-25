@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+     
+<mapper namespace="Org">
+	<insert id="create" parameterType="com.mdmp.org.Org">
+		insert org (id, name, description, createdTime)
+		values (#{id},#{name},#{description},now())
+	</insert>
+	<select id="get" parameterType="String" resultType="com.mdmp.org.Org">
+		select id, name, description from org where id = #{id}
+	</select>
+	<select id="list" resultType="com.mdmp.org.Org">
+		select id, name, description from org
+	</select>
+	<update id="updateName" parameterType="com.mdmp.org.Org">
+		update org set name = #{name} where id = #{id}
+	</update>
+	<update id="updateDesc" parameterType="com.mdmp.user.Member">
+		update org set description=#{description} where id = #{id}
+	</update>
+	<delete id="remove" parameterType="com.mdmp.org.Org" >
+		delete from org where id = #{id}
+	</delete>
+</mapper>
