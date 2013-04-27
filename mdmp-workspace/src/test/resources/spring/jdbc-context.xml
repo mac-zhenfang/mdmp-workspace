@@ -15,10 +15,10 @@
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-		<property name="driverClass" value="${jdbc.driverClassName}" />
-		<property name="jdbcUrl" value="${jdbc.url}" />
-		<property name="user" value="${jdbc.username}" />
-		<property name="password" value="${jdbc.password}" />
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/mdmp" />
+		<property name="user" value="root" />
+		<property name="password" value="111111" />
 
 		<property name="autoCommitOnClose" value="true" />
 		<property name="checkoutTimeout" value="${cpool.checkoutTimeout}" />

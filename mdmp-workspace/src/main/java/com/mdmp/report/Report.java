@@ -20,6 +20,26 @@ public class Report {
 	
 	private String mid;
 	
+	private String starttime;
+	
+	public String getStarttime() {
+		return starttime;
+	}
+
+	public void setStarttime(String starttime) {
+		this.starttime = starttime;
+	}
+
+	public String getEndtime() {
+		return endtime;
+	}
+
+	public void setEndtime(String endtime) {
+		this.endtime = endtime;
+	}
+
+	private String endtime;
+	
 	public String getId() {
 		return id;
 	}

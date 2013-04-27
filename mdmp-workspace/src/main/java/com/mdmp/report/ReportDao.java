@@ -11,15 +11,17 @@ import java.util.List;
  */
 public interface ReportDao {
 	
-	public List<Report> listReportByUser(String userId);
+	public List<Report> listReportByApp(String appId);
 	
 	public void create(Report report);
 	
 	public void remove(String reportId);
 	
-	public void update(Report report);
+	public void updateReportType(Report report);
 	
-	public void get(String reportId);
-	
-	
+	public void updateReportTime(Report report);
+
+	public void updateReportLogic(Report report);
+
+	public Report get(String reportId);
 }

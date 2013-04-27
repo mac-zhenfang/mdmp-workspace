@@ -20,6 +20,6 @@
 	<aop:aspectj-autoproxy />
 
 	<import resource="jdbc-context.xml" />
-	<import resource="servlet-context.xml" />
+	<!--<import resource="servlet-context.xml" /> -->
 	<import resource="mongo-context.xml" />
 </beans>

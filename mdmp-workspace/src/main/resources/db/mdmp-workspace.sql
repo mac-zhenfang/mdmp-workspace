@@ -51,6 +51,8 @@ DROP TABLE IF EXISTS `report`;
   `rpttype` varchar(36) NOT NULL,
   `mid` varchar(36) NOT NULL,
   `did` varchar(36) NOT NULL,
+  `starttime` varchar(36) NOT NULL,
+  `endtime` varchar(36) NOT NULL,
   `uid` varchar(36) NOT NULL,
   `logic` varchar(1024) DEFAULT NULL,
   `description` varchar(1024) DEFAULT NULL,

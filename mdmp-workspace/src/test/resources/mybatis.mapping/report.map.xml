@@ -3,17 +3,23 @@
      "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Report">
 	<insert id="create" parameterType="com.mdmp.report.Report">
-		insert report (id, name, aid, rpttype, mid, did, uid, logic, description, createdTime)
-		values (#{id},#{name},#{aid}, #{reportType}, #{mid}, #{did}, #{uid}, #{logic}, #{description},now())
+		insert report (id, name, aid, rpttype, mid, did, uid, starttime, endtime, logic, description, createdTime)
+		values (#{id},#{name},#{aid}, #{reportType}, #{mid}, #{did}, #{uid}, #{starttime}, #{endtime}, #{logic}, #{description},now())
 	</insert>
-	<select id="select" parameterType="String" resultType="com.mdmp.report.Report">
-		select id, name, aid, rpttype as reportType, mid, did, uid, logic, description, createdTime from report, app, member, datasource,model where app.id=report.aid and member.id=report.uid and datasource.id=report.did and model.id=report.mid report.id = #{id}
+	<select id="get" parameterType="String" resultType="com.mdmp.report.Report">
+		select id, name, aid, rpttype, mid, did, uid, logic, description, starttime, endtime, createdTime from report where id = #{id}
 	</select>
 	<select id="listReportByApp" parameterType="String" resultType="com.mdmp.report.Report">
-		select report.id as appId, report.name as reportName, report.rpttype as reportType, logic from report, app where report.aid = app.id and app.id=#{id}
+		select id, name, aid, rpttype, mid, did, uid, logic, description, starttime, endtime, createdTime from report where aid = #{aid}
 	</select>
 	<update id="updateReportType" parameterType="com.mdmp.report.Report">
 		update report set rpttype=#{reportType} where id = #{id}
+	</update>
+	<update id="updateReportLogic" parameterType="com.mdmp.report.Report">
+		update report set logic=#{logic} where id = #{id}
+	</update>
+	<update id="updateReportTime" parameterType="com.mdmp.report.Report">
+		update report set starttime=#{starttime} and endtime=#{endtime} where id = #{id}
 	</update>
 	<delete id="remove" parameterType="com.mdmp.report.Report">
 		delete from report where id = #{id}

@@ -10,7 +10,7 @@
           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
     <context:property-placeholder location="classpath:mongodb.properties" />
       
-    <bean id="CalDataDao"
+    <bean id="dataDao"
     class="com.mdmp.data.CalDataDaoImpl">
     	<property name="mongoTemplate" ref="mongoTemplate" />
     </bean>
