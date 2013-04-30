@@ -22,6 +22,15 @@ public class Report {
 	
 	private String starttime;
 	
+	private String data; 
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	public String getStarttime() {
 		return starttime;
 	}

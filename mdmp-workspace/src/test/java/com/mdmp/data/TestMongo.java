@@ -7,6 +7,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -29,7 +30,7 @@ public class TestMongo {
 
 	// UserDao dao;
 	ConfigurableApplicationContext context;
-
+	private static ObjectMapper mapper = new ObjectMapper();
 	@Before
 	public void setupMongo() throws Exception {
 		mongoClient = new MongoClient("localhost", 27017);
@@ -87,7 +88,7 @@ public class TestMongo {
 	public void testMongoSpringRead() {
 		// // For Annotation
 		// ApplicationContext ctx = new AnnotationConfigApplicationContext(
-		// SpringMongoConfig.class);
+		// SpringMongoConfig.class); 
 		// MongoOperations mongoOperation = (MongoOperations) ctx
 		// .getBean("mongoTemplate");
 		// DBCollection dbc = mongoOperation.getCollection("user");
@@ -95,7 +96,7 @@ public class TestMongo {
 	}
 
 	@Test
-	public void testMetricsRead() {
+	public void testMetricsRead() throws Exception {
 		CalDataDao dao = context.getBean(CalDataDaoImpl.class);
 //		List<Metrics> metrics = dao.listAll("caldata");
 //		for(Metrics mets : metrics){
@@ -106,7 +107,7 @@ public class TestMongo {
 ////			}
 //		}
 //		System.out.println(dao.listAll("caldata").size());
-		System.out.println(dao.listByTimestamp("caldata", retLastDay(), retNextDay()).size());
+		System.out.println(mapper.writeValueAsString(dao.listByTimestamp("caldata", retLastDay(), retNextDay())));
 		//dao.listByTimestamp(collection, new Date(""), end);
 	}
 	

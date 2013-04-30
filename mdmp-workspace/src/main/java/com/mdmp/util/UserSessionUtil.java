@@ -1,4 +1,4 @@
-package com.mdmp;
+package com.mdmp.util;
 
 import com.mdmp.user.Member;
 

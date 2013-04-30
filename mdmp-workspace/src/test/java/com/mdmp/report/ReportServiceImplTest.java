@@ -20,10 +20,10 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mdmp.MockContext;
-import com.mdmp.UserSessionUtil;
 import com.mdmp.model.Model;
 import com.mdmp.model.ModelDao;
 import com.mdmp.user.Member;
+import com.mdmp.util.UserSessionUtil;
 
 /**
  * @author zhefang

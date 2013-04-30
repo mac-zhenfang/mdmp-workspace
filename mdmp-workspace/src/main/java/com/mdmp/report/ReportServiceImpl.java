@@ -12,11 +12,11 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mdmp.UserSessionUtil;
 import com.mdmp.data.CalDataDao;
 import com.mdmp.data.Metrics;
 import com.mdmp.model.Model;
 import com.mdmp.model.ModelDao;
+import com.mdmp.util.UserSessionUtil;
 
 /**
  * @author zhefang
