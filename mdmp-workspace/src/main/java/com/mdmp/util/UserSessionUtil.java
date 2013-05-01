@@ -1,6 +1,6 @@
 package com.mdmp.util;
 
-import com.mdmp.user.Member;
+import com.mdmp.member.Member;
 
 public class UserSessionUtil {
 	private static ThreadLocal<Member> localUser = new ThreadLocal<Member>();

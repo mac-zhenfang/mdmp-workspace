@@ -14,9 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.mdmp.data.CalDataDao;
 import com.mdmp.data.Metrics;
-import com.mdmp.model.Model;
 import com.mdmp.model.ModelDao;
-import com.mdmp.util.UserSessionUtil;
 
 /**
  * @author zhefang
@@ -38,14 +36,16 @@ public class ReportServiceImpl implements ReportService {
 	@Override
 	public Report create(Report report) {
 		ReportServiceUtil.verify(report);
+		
 		report.setId(UUID.randomUUID().toString());
 		// TODO check if the user can create Report - ThreadLocal
-		report.setUid(UserSessionUtil.getUser().getId());
+		// report.setUid(UserSessionUtil.getUser().getId());
 		// get logic from Model, verify the logic that send from user follow the
 		// grand rule
-		Model model = modelDao.get(report.getMid());
+		// TODO verify the logic 
+		// Model model = modelDao.get(report.getMid());
 
-		ReportServiceUtil.verifyLogic(report.getLogic(), model.getLogic());
+		// ReportServiceUtil.verifyLogic(report.getLogic(), model.getLogic());
 
 		reportDao.create(report);
 		return report;
@@ -72,5 +72,11 @@ public class ReportServiceImpl implements ReportService {
 	@Override
 	public Report get(String reportId) {
 		return reportDao.get(reportId);
+	}
+
+	@Override
+	public void remove(String reportId) {
+		// TODO Auto-generated method stub
+		
 	}
 }

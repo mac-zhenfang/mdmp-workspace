@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.mdmp.user;
+package com.mdmp.member;
 
 
 /**

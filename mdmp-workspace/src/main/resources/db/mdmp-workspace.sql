@@ -137,7 +137,7 @@ CREATE TABLE `dashboard` (
 -- ----------------------------
 -- Init Default Org
 -- ----------------------------
-INSERT INTO `org` VALUES ('o180fe12-93cc-417e-8b99-b1b9710838e5', 'Mac_Johnny_App_Company', 'test', '2013-04-22 14:51:01', '2013-04-22 14:51:01');
+INSERT INTO `org` VALUES ('o180fe12-93cc-417e-8b99-b1b9710838e5', 'MDMP', 'test', '2013-04-22 14:51:01', '2013-04-22 14:51:01');
 
 -- ----------------------------
 -- Init Default member

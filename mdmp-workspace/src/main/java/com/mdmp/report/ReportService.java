@@ -21,4 +21,6 @@ public interface ReportService {
 			String endtime);
 
 	public Report get(String reportId);
+	
+	public void remove(String reportId);
 }

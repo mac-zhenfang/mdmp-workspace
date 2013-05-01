@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.annotation.Resource;
 
 import org.codehaus.jackson.map.ObjectMapper;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,7 @@ import com.mdmp.util.StringValidator;
  * @author zhefang
  *
  */
+@Controller
 public class ReportController {
 	
 	@Resource(name = "reportService")
