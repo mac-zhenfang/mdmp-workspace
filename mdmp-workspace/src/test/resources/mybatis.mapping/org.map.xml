@@ -16,7 +16,7 @@
 	<update id="updateName" parameterType="com.mdmp.org.Org">
 		update org set name = #{name} where id = #{id}
 	</update>
-	<update id="updateDesc" parameterType="com.mdmp.user.Member">
+	<update id="updateDesc" parameterType="com.mdmp.org.Org">
 		update org set description=#{description} where id = #{id}
 	</update>
 	<delete id="remove" parameterType="com.mdmp.org.Org" >
