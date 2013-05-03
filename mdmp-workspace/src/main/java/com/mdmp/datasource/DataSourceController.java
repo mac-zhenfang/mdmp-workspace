@@ -36,7 +36,7 @@ public class DataSourceController {
 
 	@RequestMapping(value = "/apps/{appId}/ds", method = RequestMethod.GET)
 	public @ResponseBody
-	Pagination<DataSource> listByOrgId(@PathVariable String orgId) {
-		return new Pagination<DataSource>(DataSourceService.listDataSourceByApp(orgId));
+	Pagination<DataSource> listByOrgId(@PathVariable String appId) {
+		return new Pagination<DataSource>(DataSourceService.listDataSourceByApp(appId));
 	}
 }
