@@ -79,4 +79,10 @@ public class ReportServiceImpl implements ReportService {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public List<Report> listReportsByDataSource(String dataSourceId) {
+		// TODO Auto-generated method stub
+		return reportDao.listReportByDataSource(dataSourceId);
+	}
 }

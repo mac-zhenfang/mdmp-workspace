@@ -24,4 +24,6 @@ public interface ReportDao {
 	public void updateReportLogic(Report report);
 
 	public Report get(String reportId);
+	
+	public List<Report> listReportByDataSource(String dataSourceId);
 }

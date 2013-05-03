@@ -49,4 +49,9 @@ public class ReportDaoImpl extends SqlSessionDaoSupport implements ReportDao {
 		return getSqlSession().selectOne("Report.get", reportId);
 	}
 
+	@Override
+	public List<Report> listReportByDataSource(String dataSourceId) {
+		return getSqlSession().selectList("Report.listReportByDataSource", dataSourceId);
+	}
+
 }
