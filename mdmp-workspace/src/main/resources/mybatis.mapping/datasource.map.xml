@@ -7,7 +7,7 @@
 		values (#{id}, #{name}, #{aid}, #{description}, now())
 	</insert>
 	<select id="get" parameterType="String" resultType="com.mdmp.datasource.DataSource">
-		select datasource.id as id, datasource.name as name, app.name as appName, datasource.description as description from datasource, app where app.id=datasource.aid and id = #{id}
+		select datasource.id as id, datasource.name as name, app.name as appName, datasource.description as description from datasource, app where app.id=datasource.aid and datasource.id = #{id}
 	</select>
 	<select id="listDataSourceByApp" parameterType="String" resultType="com.mdmp.datasource.DataSource">
 		select datasource.id as id, datasource.name as name, app.name as appName, datasource.description as description from datasource, app where app.id=datasource.aid and datasource.aid = #{aid}
