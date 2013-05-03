@@ -12,6 +12,9 @@
 	<select id="listReportByApp" parameterType="String" resultType="com.mdmp.report.Report">
 		select id, name, aid, rpttype, mid, did, uid, logic, description, starttime, endtime, createdTime from report where aid = #{aid}
 	</select>
+		<select id="listReportByDataSource" parameterType="String" resultType="com.mdmp.report.Report">
+		select id, name, aid, rpttype, mid, did, uid, logic, description, starttime, endtime, createdTime from report where did = #{did}
+	</select>
 	<update id="updateReportType" parameterType="com.mdmp.report.Report">
 		update report set rpttype=#{reportType} where id = #{id}
 	</update>

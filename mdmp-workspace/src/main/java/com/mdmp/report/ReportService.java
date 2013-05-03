@@ -17,10 +17,12 @@ public interface ReportService {
 
 	public List<Report> listReportsByApp(String appId);
 
+	public List<Report> listReportsByDataSource(String dataSourceId);
+
 	public List<Metrics> getData(String reportId, String starttime,
 			String endtime);
 
 	public Report get(String reportId);
-	
+
 	public void remove(String reportId);
 }
