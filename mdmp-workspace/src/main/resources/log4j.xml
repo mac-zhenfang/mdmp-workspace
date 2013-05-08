@@ -33,7 +33,7 @@
 	</appender>
 
 	<appender name="auditlog" class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="File" value="${catalina.base}/logs/rampapi.audit.log" />
+		<param name="File" value="${catalina.base}/logs/mdmp.audit.log" />
 		<param name="Threshold" value="DEBUG" />
 		<param name="DatePattern" value="'.'yyyy-MM-dd" />
 		<param name="Append" value="true" />

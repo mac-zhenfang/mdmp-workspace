@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.annotation.Resource;
 
 import org.codehaus.jackson.map.ObjectMapper;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.mdmp.util.Pagination;
 import com.mdmp.util.StringValidator;
 
+
+@Controller
 public class DataSourceController {
 	@Resource(name = "dataSourceService")
 	private DataSourceService DataSourceService;

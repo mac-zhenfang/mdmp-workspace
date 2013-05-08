@@ -41,7 +41,7 @@ public class TestMongo {
 				"classpath:/spring/applicationContext.xml");
 		// dao = context.getBean(UserDaoImpl.class);
 	}
-
+	
 	@Test
 	public void testMongoWrite() {
 		DBCollection users = db.getCollection("user");

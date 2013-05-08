@@ -37,7 +37,7 @@
 	String detailMessage = actualException.getCause() == null ? message : actualException.getCause().getMessage();
 	// errorMap.put("detailMessage", detailMessage.trim());
 	LOG.error(detailMessage, actualException);
-
+	out.print(actualException.toString());
 	errorMap.put("reason", message.trim());
 	response.addHeader("content-type","text/plain");
 	out.print(mapper.writeValueAsString(errorMap));
